@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>اختبار لوحة الإدارة</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background: #1a1a1a;
+            color: #fff;
+        }
+
+        .test-section {
+            background: #2a2a2a;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 10px;
+        }
+
+        button {
+            background: #D4AF37;
+            color: #1a1a1a;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 5px;
+        }
+
+        .result {
+            background: #333;
+            padding: 10px;
+            margin-top: 10px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>اختبار لوحة الإدارة - AFRO</h1>
+
+    <div class="test-section">
+        <h2>1. اختبار تحميل السكريبتات</h2>
+        <button onclick="testScripts()">اختبار</button>
+        <div id="scriptTest" class="result"></div>
+    </div>
+
+    <div class="test-section">
+        <h2>2. اختبار البيانات</h2>
+        <button onclick="testData()">اختبار البيانات</button>
+        <div id="dataTest" class="result"></div>
+    </div>
+
+    <div class="test-section">
+        <h2>3. اختبار عناصر HTML</h2>
+        <button onclick="testElements()">اختبار العناصر</button>
+        <div id="elementsTest" class="result"></div>
+    </div>
+
+    <div class="test-section">
+        <h2>4. فتح لوحة الإدارة</h2>
+        <button onclick="window.location.href='admin.html'">فتح لوحة الإدارة</button>
+    </div>
+
+    <script src="app.js"></script>
+    <script src="admin.js"></script>
+    <script>
+        function testScripts() {
+            const result = document.getElementById('scriptTest');
+            let html = '<h3>نتائج الاختبار:</h3>';
+
+            html += '<p>✓ STORAGE_KEYS: ' + (typeof STORAGE_KEYS !== 'undefined' ? 'موجود' : 'غير موجود') + '</p>';
+            html += '<p>✓ getProducts: ' + (typeof getProducts !== 'undefined' ? 'موجودة' : 'غير موجودة') + '</p>';
+            html += '<p>✓ getCategories: ' + (typeof getCategories !== 'undefined' ? 'موجودة' : 'غير موجودة') + '</p>';
+            html += '<p>✓ initAdminPanel: ' + (typeof initAdminPanel !== 'undefined' ? 'موجودة' : 'غير موجودة') + '</p>';
+
+            result.innerHTML = html;
+        }
+
+        function testData() {
+            const result = document.getElementById('dataTest');
+            const products = getProducts();
+            const categories = getCategories();
+
+            let html = '<h3>البيانات المخزنة:</h3>';
+            html += '<p>عدد الأقسام: ' + categories.length + '</p>';
+            html += '<p>عدد المنتجات: ' + products.length + '</p>';
+
+            if (categories.length > 0) {
+                html += '<h4>الأقسام:</h4>';
+                categories.forEach(cat => {
+                    html += '<p>- ' + cat.name + ' (' + cat.count + ' منتج)</p>';
+                });
+            }
+
+            result.innerHTML = html;
+        }
+
+        function testElements() {
+            const result = document.getElementById('elementsTest');
+
+            // فتح صفحة admin.html في نافذة جديدة للاختبار
+            const adminWindow = window.open('admin.html', '_blank');
+
+            setTimeout(() => {
+                try {
+                    const doc = adminWindow.document;
+                    let html = '<h3>عناصر HTML:</h3>';
+
+                    html += '<p>✓ adminLogin: ' + (doc.getElementById('adminLogin') ? 'موجود' : 'غير موجود') + '</p>';
+                    html += '<p>✓ adminDashboard: ' + (doc.getElementById('adminDashboard') ? 'موجود' : 'غير موجود') + '</p>';
+                    html += '<p>✓ addProductBtn: ' + (doc.getElementById('addProductBtn') ? 'موجود' : 'غير موجود') + '</p>';
+                    html += '<p>✓ productsSection: ' + (doc.getElementById('productsSection') ? 'موجود' : 'غير موجود') + '</p>';
+
+                    result.innerHTML = html;
+                } catch (e) {
+                    result.innerHTML = '<p>خطأ: لا يمكن الوصول للنافذة الجديدة بسبب سياسات الأمان</p>';
+                }
+            }, 1000);
+        }
+    </script>
+</body>
+
+</html>

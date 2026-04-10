@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تعليمات لوحة الإدارة - AFRO</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            background: linear-gradient(135deg, #1a1a1a 0%, #0a0a0a 100%);
+            min-height: 100vh;
+            padding: 2rem;
+        }
+
+        .instructions-container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: rgba(26, 26, 26, 0.9);
+            border: 2px solid rgba(212, 175, 55, 0.3);
+            border-radius: 30px;
+            padding: 3rem;
+        }
+
+        h1 {
+            color: var(--AFRO-gold);
+            font-size: 3rem;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .problem {
+            background: rgba(255, 68, 68, 0.1);
+            border: 2px solid #ff4444;
+            border-radius: 20px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .problem h2 {
+            color: #ff4444;
+            margin-bottom: 1rem;
+        }
+
+        .solution {
+            background: rgba(74, 222, 128, 0.1);
+            border: 2px solid #4ade80;
+            border-radius: 20px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .solution h2 {
+            color: #4ade80;
+            margin-bottom: 1rem;
+        }
+
+        .steps {
+            list-style: none;
+            padding: 0;
+        }
+
+        .steps li {
+            background: rgba(212, 175, 55, 0.1);
+            border-right: 4px solid var(--AFRO-gold);
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            border-radius: 10px;
+            color: var(--AFRO-nude);
+            font-size: 1.1rem;
+        }
+
+        .steps li strong {
+            color: var(--AFRO-gold);
+            font-size: 1.3rem;
+        }
+
+        .button-container {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .btn {
+            flex: 1;
+            padding: 1.2rem 2rem;
+            border-radius: 15px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+
+        .btn-primary {
+            background: var(--AFRO-gold);
+            color: var(--AFRO-dark);
+            border: none;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.4);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--AFRO-gold);
+            border: 2px solid var(--AFRO-gold);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(212, 175, 55, 0.1);
+        }
+
+        .note {
+            background: rgba(212, 175, 55, 0.1);
+            border-right: 4px solid var(--AFRO-gold);
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin-top: 2rem;
+        }
+
+        .note p {
+            color: var(--AFRO-nude);
+            margin: 0;
+        }
+
+        .image-placeholder {
+            background: rgba(212, 175, 55, 0.05);
+            border: 2px dashed rgba(212, 175, 55, 0.3);
+            border-radius: 15px;
+            padding: 3rem;
+            text-align: center;
+            margin: 2rem 0;
+            color: var(--AFRO-nude);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="instructions-container">
+        <h1>🎯 كيفية الوصول لقسم المنتجات</h1>
+
+        <div class="problem">
+            <h2>❌ المشكلة</h2>
+            <p style="color: var(--AFRO-nude); font-size: 1.1rem;">
+                القائمة الجانبية مخفية على الشاشات الصغيرة (أقل من 1024 بكسل)، مما يجعل من الصعب الوصول إلى قسم
+                المنتجات.
+            </p>
+        </div>
+
+        <div class="solution">
+            <h2>✅ الحل السريع</h2>
+            <ol class="steps">
+                <li>
+                    <strong>الخطوة 1:</strong> افتح لوحة الإدارة في نافذة متصفح كاملة (ليست في وضع الهاتف)
+                </li>
+                <li>
+                    <strong>الخطوة 2:</strong> اضغط F11 لتفعيل وضع ملء الشاشة، أو قم بتكبير نافذة المتصفح لأكثر من 1024
+                    بكسل
+                </li>
+                <li>
+                    <strong>الخطوة 3:</strong> ستظهر القائمة الجانبية تلقائياً على اليسار
+                </li>
+                <li>
+                    <strong>الخطوة 4:</strong> اضغط على "المنتجات" في القائمة الجانبية
+                </li>
+                <li>
+                    <strong>الخطوة 5:</strong> اضغط على زر "إضافة منتج جديد" الذهبي
+                </li>
+            </ol>
+        </div>
+
+        <div class="image-placeholder">
+            <svg width="100" height="100" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"
+                style="margin: 0 auto; opacity: 0.3;">
+                <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                <line x1="9" y1="3" x2="9" y2="21"></line>
+            </svg>
+            <p style="margin-top: 1rem; font-size: 1.1rem;">
+                القائمة الجانبية ستظهر على اليسار عند تكبير الشاشة
+            </p>
+        </div>
+
+        <div class="note">
+            <p>
+                <strong>💡 ملاحظة:</strong> قمت بإضافة ملفات جديدة (admin-mobile.css و admin-mobile.js) لإضافة زر قائمة
+                متحرك.
+                إذا لم يعمل، يرجى تحديث الصفحة (Ctrl+F5) أو استخدام الحل السريع أعلاه.
+            </p>
+        </div>
+
+        <div class="button-container">
+            <a href="admin.html" class="btn btn-primary">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"></path>
+                    <polyline points="10 17 15 12 10 7"></polyline>
+                    <line x1="15" y1="12" x2="3" y2="12"></line>
+                </svg>
+                فتح لوحة الإدارة
+            </a>
+            <a href="index.html" class="btn btn-secondary">
+                العودة للموقع
+            </a>
+        </div>
+    </div>
+
+    <script>
+        // Auto-open admin panel in fullscreen mode
+        document.querySelector('.btn-primary').addEventListener('click', (e) => {
+            e.preventDefault();
+            window.location.href = 'admin.html';
+            // Try to request fullscreen
+            setTimeout(() => {
+                if (document.documentElement.requestFullscreen) {
+                    document.documentElement.requestFullscreen().catch(() => {
+                        // Fullscreen request failed, that's okay
+                    });
+                }
+            }, 500);
+        });
+    </script>
+</body>
+
+</html>
